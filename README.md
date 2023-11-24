@@ -26,46 +26,12 @@ Evaluation:
 
 The application exposes an API to calculate pricing using the formula:
 
-�
-�
-�
-�
-�
-=
-(
-�
-�
-�
-+
-(
-�
-�
-∗
-�
-�
-�
-)
-)
-+
-(
-�
-�
-∗
-�
-�
-�
-)
-+
-�
-�
 Price=(DBP+(Dn∗DAP))+(Tn∗TMF)+WC
 
 Where:
 
-�
 D represents additional distance traveled.
-�
-�
+
 Tn is the time duration.
 Usage
 The application can be accessed at Applink.
