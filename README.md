@@ -47,7 +47,7 @@ Clone the GitHub repository.
 
 bash
 Copy code
-git clone https://github.com/your-username/your-repo.git
+git clone [https://github.com/your-username/your-repo.git](https://github.com/ashwanidubey/calculate-price)
 Navigate to the project directory.
 
 bash
