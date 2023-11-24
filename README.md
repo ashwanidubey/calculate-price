@@ -1,72 +1,57 @@
- # APP LINK https://calculate-price-9do6jc7lz-ashwanidubey.vercel.app/
 
-# Getting Started with Create React App
+Pricing Module v2
+Objective
+Design and build a web application with a configurable pricing module that supports differential pricing. The application utilizes the Django Admin for the user interface.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Description
+The Pricing Module manages product/service prices and calculates the final invoice amount based on factors such as time, distance traveled, and configurable pricing tiers. The system is inspired by the billing logic of ride-sharing services like Uber or Ola.
 
-## Available Scripts
+Store:
 
-In the project directory, you can run:
+The database model is designed to store pricing configurations, allowing for flexibility and multiple configurations to be stored concurrently. Business Development teams can enable/disable specific configurations. The pricing is configured based on the following parameters:
 
-### `npm start`
+Distance Base Price (DBP): Varies depending on the day of the week and the distance traveled.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Distance Additional Price (DAP): Additional cost per kilometer after a certain distance.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Time Multiplier Factor (TMF): Multiplier for time duration, with different tiers.
 
-### `npm test`
+Waiting Charges (WC): Additional charges for waiting time after an initial period.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Interface:
 
-### `npm run build`
+A custom form is provided for adding, modifying, and removing pricing configurations. The form includes proper validations, and changes to the configuration are logged with the user and timestamp.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Evaluation:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The application exposes an API to calculate pricing using the formula:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Price=(DBP+(Dn∗DAP))+(Tn∗TMF)+WC
 
-### `npm run eject`
+Where:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+D represents additional distance traveled.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Tn is the time duration.
+Usage
+The application can be accessed at Applink.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Build Instructions
+To set up the project locally, follow these instructions:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Clone the GitHub repository.
 
-## Learn More
+bash
+Copy code
+git clone https://github.com/your-username/your-repo.git
+Navigate to the project directory.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+bash
+Copy code
+cd your-repo
+Install dependencies.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+bash
+Copy code
+npm install  # or yarn install
+Start the development server.
